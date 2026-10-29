@@ -1,0 +1,8 @@
+dist/
+.dist-stage-*/
+.dist-backup-*/
+node_modules/
+.DS_Store
+.env*
+*.log
+.local/
