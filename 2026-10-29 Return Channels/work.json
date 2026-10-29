@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29",
+  "title": "Return Channels",
+  "description": "Fine currents bend around three absences. A touch leaves another opening; over a minute, its influence recedes and the paths return.",
+  "engine": "Canvas 2D",
+  "tags": [
+    "generative",
+    "interactive",
+    "flow",
+    "time"
+  ],
+  "sources": [
+    "https://www.lerandom.art/editorial/ian-cheng-on-composing-with-systems",
+    "https://www.lerandom.art/editorial/samia-halaby-on-different-brushes"
+  ]
+}
