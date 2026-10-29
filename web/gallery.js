@@ -62,5 +62,5 @@ $('year').textContent=String(new Date().getFullYear());
 fetch('works.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('manifest');return r.json();}).then(data=>{
   if(!Array.isArray(data)||data.some(w=>!w||!localWork(w.url)||!localThumb(w.thumbnail)||typeof w.title!=='string'||typeof w.description!=='string'||typeof w.engine!=='string'||!Array.isArray(w.tags)||w.tags.some(t=>typeof t!=='string')))throw Error('invalid manifest');
   works=data;$('count').textContent=String(works.length).padStart(3,'0')+' WORK'+(works.length===1?'':'S');$('total').textContent=String(works.length).padStart(3,'0');
-  const date=new URL(location.href).searchParams.get('work');if(works.length)selectWork(works.find(w=>w.date===date)||works[0]);else renderIndex();
+  const address=new URL(location.href),date=address.searchParams.get('work');if(works.length){selectWork(works.find(w=>w.date===date)||works[0]);if(address.hash==='#concept')$('concept').scrollIntoView({block:'start',behavior:'auto'});}else renderIndex();
 }).catch(()=>{stopLive();$('exhibition').hidden=true;$('count').textContent='ARCHIVE TEMPORARILY UNAVAILABLE';$('error').hidden=false;});

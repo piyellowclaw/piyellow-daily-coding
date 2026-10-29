@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
 const code=await readFile(new URL('../web/gallery.js',import.meta.url),'utf8');
-function el(){return {children:[],attributes:{},textContent:'',value:'',hidden:true,listeners:{},append(...v){this.children.push(...v)},replaceChildren(){this.children=[]},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attributes[k]=v},removeAttribute(k){delete this[k];delete this.attributes[k]},focus(){},scrollIntoView(){}};}
+function el(){return {children:[],attributes:{},textContent:'',value:'',hidden:true,listeners:{},append(...v){this.children.push(...v)},replaceChildren(){this.children=[]},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attributes[k]=v},removeAttribute(k){delete this[k];delete this.attributes[k]},focus(){},scrollIntoView(){this.scrolled=true;}};}
 async function run(data,fail=false,query=''){
- const ids=['search','gallery','no-results','empty','error','count','total','exhibition','live-frame','work-image','activate','view-state','view-hint','work-number','work-date','work-engine','work-title','work-subtitle','work-description','work-tags','open-work','source-folder','concept-body','concept-title','work-sources','year','viewport'];
+ const ids=['search','gallery','no-results','empty','error','count','total','exhibition','live-frame','work-image','activate','view-state','view-hint','work-number','work-date','work-engine','work-title','work-subtitle','work-description','work-tags','open-work','source-folder','concept-body','concept-title','work-sources','year','viewport','concept'];
  const nodes=Object.fromEntries(ids.map(k=>[k,el()]));
  const events={};const context={document:{getElementById:id=>nodes[id],createElement:()=>el()},fetch:async()=>({ok:!fail,json:async()=>data}),URL,location:{href:'https://example.test/'+query},history:{replaceState(){}},matchMedia:()=>({matches:true}),window:{addEventListener:(k,f)=>events[k]=f}};
  vm.runInNewContext(code,context);await new Promise(r=>setImmediate(r));return {nodes,events};
@@ -19,3 +19,5 @@ test('unsafe artwork URL rejects manifest',async()=>{const w=work();w.url='javas
 test('empty archive stays explicit and creates no fake work',async()=>{const {nodes:n}=await run([]);assert.equal(n.empty.hidden,false);assert.equal(n.gallery.children.length,0);assert.equal(n.count.textContent,'000 WORKS');});
 test('fetch failure displays honest error state',async()=>{const {nodes:n}=await run([],true);assert.equal(n.error.hidden,false);assert.equal(n.count.textContent,'ARCHIVE TEMPORARILY UNAVAILABLE');});
 test('older work without structured concept has explicit fallback',async()=>{const w=work();delete w.concept;const {nodes:n}=await run([w]);assert.match(n['concept-body'].children[0].textContent,/完整創作筆記/);assert.equal(n['work-description'].textContent,w.description);});
+
+test('concept share URL scrolls only after selected work is rendered',async()=>{const {nodes:n}=await run([work()],false,'?work=2026-10-29#concept');assert.equal(n.concept.scrolled,true);assert.equal(n['concept-body'].children.length,4);});
