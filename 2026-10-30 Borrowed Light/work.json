@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "title": "Borrowed Light",
+  "description": "Twelve folding shutters share a finite allowance. Holding one opening changes what remains available to the others.",
+  "engine": "Canvas 2D",
+  "tags": [
+    "generative",
+    "interactive",
+    "allocation",
+    "light"
+  ],
+  "sources": [
+    "https://two.neort.io/en/exhibitions/curation_free",
+    "https://two.neort.io/en/exhibitions/made_in_contract"
+  ],
+  "concept": {
+    "subtitle": "借來的光",
+    "heading": "多留一會兒，誰替你讓出餘地？",
+    "summary": "十二扇摺頁輪流展露暖色的背面。點住其中一扇，並不會增加可分配的餘裕：其餘摺頁必須一起改變開合。",
+    "question": "入口可以向所有人開放，停留的時間與可見的位置卻仍然有限。作品將這個差別縮成一排摺頁：一次溫和的保留，也可能成為別人必須退讓的理由。",
+    "form": "深藍、灰綠與赭褐的正面，遮住較暖的背面。重複的鉸鏈與少量刻線讓開合可被辨認；不使用寫實光源或粒子特效，把注意力留給每扇頁之間的差異。這不是光學模擬，開合值的總額固定，不代表螢幕亮度或實際光能守恆。",
+    "time": "沒有操作時，偏好的位置緩慢循環。每次變化都重新分配十二個開合值，其總和維持 3.8，單扇上限為 0.98。動畫以平滑過渡保留這個總額；暫停時仍可以改變選擇，減少動態偏好則從靜止開始。",
+    "interaction": "點擊或觸碰摺頁可保留它，再次點擊同一扇即可釋放。方向按鈕或鍵盤左右鍵切換選擇，Enter 保留或釋放，空白鍵暫停，Escape 取消保留；Reset 回到起點。沒有資料上傳或跨次瀏覽的個人記憶。"
+  }
+}
