@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-31",
+  "title": "Partial Weather",
+  "description": "A narrow moving window exposes a field of threads. Its fading footprints record attention, not the whole weather.",
+  "engine": "Canvas 2D",
+  "tags": [
+    "observation",
+    "time",
+    "interactive",
+    "generative"
+  ],
+  "sources": [
+    "https://tegabrain.com/Keeping-Time",
+    "https://tegabrain.com/Deep-Swamp"
+  ],
+  "concept": {
+    "subtitle": "局部天氣",
+    "heading": "你看見的是變化，還是觀看留下的分布？",
+    "summary": "狹窄的觀察窗揭開流動的線場。移動視窗後，曾經可見的位置短暫留下，再逐漸淡去；未被看見的部分並未停止。",
+    "question": "一張記錄常把注意力的路徑，誤認成世界的分布。這件作品讓觀看範圍保持可見，並提供短暫揭開全場的對照。",
+    "form": "靛藍底上，冷灰與金色線條沿不同曲率緩慢起伏；金色矩形既是入口也是遮蔽的邊界。殘留的是觀察位置，不是過去影格，線條仍是現在的線條。",
+    "time": "最近最多二十四個位置在十八秒模擬時間內淡去。線場由確定性三角函式生成，不是實際氣象資料、預測或物理模擬；暫停同時停止淡去與流動。",
+    "interaction": "點擊畫布或使用滑桿改變視窗；聚焦畫布後，左右方向鍵移動、空白鍵暫停。Show field 顯示完整線場，Escape 收起，Reset 回到起點。減少動態偏好從暫停開始，沒有跨次瀏覽紀錄。"
+  }
+}
