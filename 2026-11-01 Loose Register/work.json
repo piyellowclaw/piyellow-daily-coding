@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-01",
+  "title": "Loose Register",
+  "description": "Two line plates share a geometry but refuse a perfect register. Align them, then decide what the displacement was doing.",
+  "engine": "Canvas 2D",
+  "tags": [
+    "registration",
+    "difference",
+    "moire",
+    "interactive"
+  ],
+  "sources": [
+    "https://www.redblobgames.com/blog/2025-10-13-mapgen4-webgl2/"
+  ],
+  "concept": {
+    "subtitle": "鬆開套準",
+    "heading": "兩層對齊之後，少了什麼？",
+    "summary": "藍灰與陶紅兩層線版共用一張彎曲的網格，卻沿不同方向緩慢錯開。按下 Align plates，比較完全重合與保留偏移的兩種狀態。",
+    "question": "偏差不一定值得保留，整齊也不一定就是目的。這件作品讓差異成為可調整、可撤回的決定，而不是只能修好或接受的結果。",
+    "form": "米白底上的兩張細線網格由同一組確定性曲線生成，第二層另加局部位移。交錯的線距形成密度節奏；沒有複製實體版畫、影像素材或既有作品程式。",
+    "time": "位移的方向緩慢變化，網格本身不累積歷史。暫停保留當前位置；對齊不會停止時間，分開後會顯示當下的偏移。這是數位線版，不是印刷機或物理模擬。",
+    "interaction": "點擊畫布改變偏移中心，聚焦後方向鍵微調、空白鍵暫停。Offset 調整幅度，Align plates 對齊或分開，Reset 重設線版但保留目前的播放選擇。減少動態偏好從暫停開始；沒有聲音、相機或跨次瀏覽紀錄。"
+  }
+}
